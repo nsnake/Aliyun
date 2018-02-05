@@ -1,7 +1,7 @@
 # Aliyun
 perl版阿里云API的SDK
 
-基于第二版API签名
+基于第二版API签名，使用Mojo::UserAgent模块，基于回调的方式使用
 
 ```
 #!/usr/bin/perl
