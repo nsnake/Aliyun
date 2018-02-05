@@ -45,7 +45,8 @@ sub get {
                 my $err = $tx->error;
                 $result = { 'error_response' => {
                         'code' => $err->{code} ? $err->{code} : '9999',
-                        'msg'  => $err->{message}
+                        'msg'  => $err->{message},
+                        'sub_code' =>  $err->{message}
                     } };
             }
             if (ref $cb eq ref sub {}) {
