@@ -34,43 +34,38 @@ sub get_params {
     return $_[0]->{'params'};
 }
 
+1;
+
+__DATA__
+
 =encoding utf8
 
 =head1 NAME
 
-Aliyun::Method::FcSmsNumSend- 阿里云SDK方法
+Aliyun::Method::FcIotQrycard- 阿里大于查询终端信息
 
-=head1 SYNOPSIS
-
-
-=head1 DESCRIPTION
-
-L<Aliyun::Method::FcSmsNumSend> 阿里大于发送短信
 
 =head1 ATTRIBUTES
 
 =head1 METHODS
 
-=head2 set_rec_num
-set_rec_num('phone_no')
-设置接收号码
+=head2 set_bill_source
 
-=head2 set_sms_free_sign_name
-set_sms_free_sign_name()
-设置短信签名
+  外部计费来源
 
-=head2 set_sms_template_code
-set_sms_template_code()
-设置短信模板id
+=head2 set_bill_real
 
-=head2 set_sms_param
-set_sms_param()
-设置短信内容替换
+  外部计费号
+
+=head2 set_iccid
+
+  设置ICCID
 
 =head2 get_params
-%hash = get_params()
-获取提交的参数。该方法必须实现
+
+  %hash = get_params()
+  获取提交的参数。该方法必须实现
 
 =cut
-1;
+
 

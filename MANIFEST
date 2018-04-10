@@ -1,0 +1,10 @@
+Changes
+Makefile.PL
+MANIFEST
+README.md
+t/Aliyun.t
+lib/Aliyun.pm
+lib/Request.pm
+lib/AuthV2.pm
+lib/Method/FcIotQrycard.pm
+lib/Method/FcSmsNumSend.pm
