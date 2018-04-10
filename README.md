@@ -1,5 +1,6 @@
 # Aliyun
-perl版阿里云API的SDK
+perl版阿里云API的SDK。
+2018/4：已上传至CPAN，可以cpan Aliyun进行安装。
 
 基于第二版API签名，使用Mojo::UserAgent模块，基于回调的方式使用
 
