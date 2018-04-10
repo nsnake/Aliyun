@@ -1,8 +1,8 @@
 package Aliyun::Method::FcSmsNumSend;
 use 5.010;
 use Data::Dumper qw/Dumper/;
+use Cpanel::JSON::XS;
 #阿里大于短信发送
-
 sub new {
     my $class = shift;
     $class = (ref $class) || $class || __PACKAGE__;
@@ -31,7 +31,7 @@ sub set_sms_template_code {
 
 #设置内容替换
 sub set_sms_param {
-    $_[0]->{'params'}->{'sms_param'} = $_[1];
+    $_[0]->{'params'}->{'sms_param'} = encode_json($_[1]);
 }
 
 sub get_params {

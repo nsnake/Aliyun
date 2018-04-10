@@ -5,6 +5,7 @@ use warnings;
 use Mojo::UserAgent;
 use Aliyun::AuthV2;
 use Data::Dumper qw/Dumper/;
+use Cpanel::JSON::XS;
 use version;
 our $VERSION = 0.2;
 
@@ -39,14 +40,14 @@ sub get {
             my ($mojo_ua, $tx) = @_;
             my $result = {};
             if (my $res = $tx->success) {
-                $result = $res->body;
+                $result = decode_json($res->body) || {};
             }
             else {
                 my $err = $tx->error;
                 $result = { 'error_response' => {
-                        'code' => $err->{code} ? $err->{code} : '9999',
-                        'msg'  => $err->{message},
-                        'sub_code' =>  $err->{message}
+                        'code'     => $err->{code} ? $err->{code} : '9999',
+                        'msg'      => $err->{message},
+                        'sub_code' => $err->{message}
                     } };
             }
             if (ref $cb eq ref sub {}) {

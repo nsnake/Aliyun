@@ -86,9 +86,10 @@ sub get_url {
     my $all_parms = $merge->merge($public_params, $input_parms);
     my ($signature_param, $url_param) = ('', '');
     map {
-        #encode("utf8", $_), 是否需要转utf8?
-            $signature_param .= $_ . $all_parms->{$_},
-            $url_param .= join('=', $_, uri_escape($all_parms->{$_}) . '&')
+        #是否需要转utf8?
+        #$_ = encode_utf8($_);
+        $signature_param .= $_ . $all_parms->{$_};
+        $url_param .= join('=', $_, uri_escape($all_parms->{$_}) . '&')
     } sort keys(%{$all_parms});
     #MD5加密后需要全部大写,否则签名会出错
     my $signature = uc(md5_hex(
