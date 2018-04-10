@@ -58,7 +58,14 @@ sub get {
 }
 
 
-__DATA__
+=encoding utf8
+
+=head1 NAME
+
+Aliyun::Request - 阿里云SDK
+
+=head1 SYNOPSIS
+
 #!/usr/bin/perl
 use 5.010;
 use Aliyun::AuthV2;
@@ -91,3 +98,22 @@ $request->get($auth, $method, sub {
 $request->get($auth, $method2, sub {
         say Dumper $_[0];
     });
+
+=head1 DESCRIPTION
+
+L<Aliyun::Request> 异步请求阿里云的客户端
+
+=head1 ATTRIBUTES
+
+=head1 METHODS
+
+
+=head2 get
+  $request->get(Aliyun::AuthV2, Aliyun::Method, sub{callback});
+  异步发送请求到阿里云.
+  
+=head1 SEE ALSO
+
+L<Aliyun::AuthV2>, L<Mojo::UserAgent>.
+
+=cut

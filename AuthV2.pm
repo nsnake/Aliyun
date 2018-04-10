@@ -97,3 +97,43 @@ sub get_url {
     ));
     return sprintf('%s?%ssign=%s', $self->{'aliyun_url'}, $url_param, $signature);
 }
+
+=encoding utf8
+
+=head1 NAME
+
+Aliyun::AuthV2- 阿里云V2签名算法
+
+=head1 SYNOPSIS
+
+use Aliyun::AuthV2;
+my $auth = Aliyun::AuthV2->new();
+$auth->set_appkey('你自己的key');
+$auth->set_secretkey('你自己的秘钥');
+
+=head1 DESCRIPTION
+
+L<Aliyun::AuthV2> 阿里云V2签名算法
+
+=head1 ATTRIBUTES
+
+=head1 METHODS
+
+=head2 set_evn
+$auth->set_evn(1, 0);
+$is_sanbox  生产环境：1,测试环境：0,默认:1
+$is_https  启用https：1,非https:0,默认:0
+
+=head2 set_appkey
+  $auth->set_appkey('你自己的key');
+  设置阿里云给你的key值
+  
+=head2 set_secretkey
+  $auth->set_secretkey('你自己的秘钥');
+  置阿里云给你的秘钥
+
+=head2 get_url
+ $auth->set_secretkey({});
+  生成请求的url地址
+
+=cut
